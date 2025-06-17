@@ -4,12 +4,12 @@ function secondHighest(arr) {
     let max = -Infinity;
     let secondMax = -Infinity;
 
-    for (let num of arr) {
-        if (num > max) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
             secondMax = max;
-            max = num;
-        } else if (num > secondMax && num < max) {
-            secondMax = num;
+            max = arr[i];
+        } else if (arr[i] > secondMax && arr[i] < max) {
+            secondMax = arr[i];
         }
     }
 
