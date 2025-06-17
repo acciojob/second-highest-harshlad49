@@ -1,26 +1,17 @@
-// //your JS code here. If required.
-//  function secondHighest(arr) {
-//       if (arr.length < 2) return -Infinity;
+function secondHighest(arr) {
+    if (arr.length < 2) return -Infinity;
 
-//       let max = -Infinity;
-//       let second = -Infinity;
+    let max = -Infinity;
+    let secondMax = -Infinity;
 
-//       for (let num of arr) {
-//         if (num > max) {
-//           second = max;
-//           max = num;
-//         } else if (num > second && num < max) {
-//           second = num;
-//         }
-//       }
+    for (let num of arr) {
+        if (num > max) {
+            secondMax = max;
+            max = num;
+        } else if (num > secondMax && num < max) {
+            secondMax = num;
+        }
+    }
 
-//       return second === -Infinity ? -Infinity : second;
-//     }
-
-//     function handleClick() {
-//       const input = document.getElementById("arrayInput").value;
-//       const arr = input.split(',').map(num => parseInt(num.trim())).filter(num => !isNaN(num));
-
-//       const result = secondHighest(arr);
-//       document.getElementById("result").textContent = `Second highest element: ${result}`;
-//     }
+    return secondMax === -Infinity ? -Infinity : secondMax;
+}

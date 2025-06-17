@@ -5,35 +5,6 @@
 </head>
 <body>
   <script>
-    function secondHighest() {
-      let n = 6; // Cypress will simulate 6 prompt calls
-      let arr = [];
-
-      for (let i = 0; i < n; i++) {
-        let input = prompt("Enter a number:");
-        let num = parseInt(input);
-        if (!isNaN(num)) {
-          arr.push(num);
-        }
-      }
-
-      let max = -Infinity;
-      let second = -Infinity;
-
-      for (let num of arr) {
-        if (num > max) {
-          second = max;
-          max = num;
-        } else if (num > second && num < max) {
-          second = num
-        }
-      }
-
-      alert(second === -Infinity ? -Infinity : second);
-    }
-
-    // Call the function immediately for Cypress to test
-    secondHighest();
   </script>
 </body>
 </html>
