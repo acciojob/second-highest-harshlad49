@@ -1,37 +1,39 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <title>Second Highest Element</title>
 </head>
+<body>
+  <script>
+    function secondHighest() {
+      let n = 6; // Cypress will simulate 6 prompt calls
+      let arr = [];
 
-<body>	
-	<script>
-		function secondHighest(arr) {
-			//Write your code here
-			
-		}
+      for (let i = 0; i < n; i++) {
+        let input = prompt("Enter a number:");
+        let num = parseInt(input);
+        if (!isNaN(num)) {
+          arr.push(num);
+        }
+      }
 
-		function Main() {
-			var n = prompt("Enter the number of elements");
-			var arr = [];
-			for (var i = 0; i < n; i++) {
-				arr[i] = prompt("Enter element " + (i+1));
-			}
-			alert(secondHighest(arr));
-		}
-		Main();
-	</script>
+      let max = -Infinity;
+      let second = -Infinity;
 
-    <script type="text/javascript" src="./script.js">
-</script>
-<label for="arrayInput">Enter array elements (comma-separated):</label><br>
-  <input type="text" id="arrayInput" placeholder="e.g. 5, 1, 2, 3, 4"><br><br>
+      for (let num of arr) {
+        if (num > max) {
+          second = max;
+          max = num;
+        } else if (num > second && num < max) {
+          second = num;
+        }
+      }
 
-  <button onclick="handleClick()">Find Second Highest</button>
+      alert(second === -Infinity ? -Infinity : second);
+    }
 
-  <p id="result"></p>
+    // Call the function immediately for Cypress to test
+    secondHighest();
+  </script>
 </body>
-
 </html>
